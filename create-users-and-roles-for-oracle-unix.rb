@@ -11,7 +11,7 @@
 # Create groups - begin
 # https://docs.chef.io/resource_group.html
 
-# Common install role for all oracle related user
+# Common install group for all oracle related users
 group 'oinstall' do
   action :create
   gid '501'
@@ -130,4 +130,12 @@ end
   end
 end
 
+%w[ /usr/local/tns ].each do |path|
+  directory path do
+    owner 'oracle'
+    group 'oinstall'
+    mode '0775'
+    action :create
+  end
+end
 # Create directory - end
