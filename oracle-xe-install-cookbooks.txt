@@ -1,0 +1,1 @@
+https://github.com/leifg/chef-oracle-xe/blob/master/templates/default/configure_oracle.sh.erb
